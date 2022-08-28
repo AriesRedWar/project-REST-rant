@@ -9,6 +9,9 @@ function error404 () {
               <p>Oops, sorry, we can't find this page!</p>
               <div>
                 <img src="/images/Aries.jpg" alt="aries God of Ware on fire" />
+                <a href="/">
+  <button className="btn-primary">Home Page</button>
+</a>
             </div>
           </main>
       </Def>
