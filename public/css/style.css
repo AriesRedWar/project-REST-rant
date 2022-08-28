@@ -1,5 +1,14 @@
+main {
+  text-align: center;
+}
+
 h1 {
-    text-align: center;
-    color: cornflowerblue;
-  }
-  
+  text-align: center;
+  color: cornflowerblue;
+}
+
+img {
+  width: 30%;
+  display: block;
+  margin: auto;
+}

@@ -7,6 +7,9 @@ function error404 () {
           <main>
               <h1>404: PAGE NOT FOUND</h1>
               <p>Oops, sorry, we can't find this page!</p>
+              <div>
+                <img src="/images/Aries.jpg" alt="aries God of Ware on fire" />
+            </div>
           </main>
       </Def>
     )
