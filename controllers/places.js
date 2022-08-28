@@ -4,6 +4,8 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+
+
 router.get('/', (req, res) => {
     let places = [{
         name: 'H-Thai-ML',
