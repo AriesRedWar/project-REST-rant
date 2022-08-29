@@ -1,5 +1,6 @@
 main {
   text-align: center;
+  background-color: whitesmoke;
 }
 nav {
   background-color: cornflowerblue;
@@ -44,9 +45,42 @@ main {
   background-color: white;
 }
 
+#mainPlace {
+  display: flex;
+
+  padding: 1em;
+  border: 1px solid black;
+}
+
+#placeimg {
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#Rate, p {
+  padding: 0.1em;
+}
+#Desc, p {
+  padding: 0.1em;
+}
+
+
+
 h1 {
   text-align: center;
   color: cornflowerblue;
+}
+
+h3 {
+  color: red;
+  text-shadow: 2px 2px 2px rgb(3, 3, 8);
+  }
+
+
+h4 p {
+  font-size: 15px;
+  text-align: Center;
 }
 
 img {
@@ -54,6 +88,8 @@ img {
   display: block;
   margin: auto;
 }
+
+
 
 footer {
   text-align: center;

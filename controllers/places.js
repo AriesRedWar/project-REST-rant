@@ -2,19 +2,6 @@ const router = require("express").Router();
 const places = require("../models/places.js");
 
 router.get("/", (req, res) => {
-  //     let places = [{
-  //         name: 'H-Thai-ML',
-  //         city: 'Seattle',
-  //         state: 'WA',
-  //         cuisines: 'Thai, Pan-Asian',
-  //         pic: '/images/Rustic Restaurant.jpg'
-  //       }, {
-  //         name: 'Coding Cat Cafe',
-  //         city: 'Phoenix',
-  //         state: 'AZ',
-  //         cuisines: 'Coffee, Bakery',
-  //         pic: '/images/Rustic Restaurant 2.jpg'
-  //       }]
   res.render("places/index", { places });
 });
 
@@ -47,7 +34,7 @@ router.get('/:id', (req, res) => {
     res.render('error404')
   }
   else {
-    res.render('places/show', { places: places[id]})
+    res.render('places/show', { place: places[id]})
   }
 })
 
