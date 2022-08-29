@@ -18,3 +18,10 @@ img {
   display: block;
   margin: auto;
 }
+
+footer {
+  text-align: center;
+  background-color: rgb(206, 238, 227);
+  padding: 20px;
+  border-top: 5px solid white;
+}
