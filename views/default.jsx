@@ -27,7 +27,7 @@ function Def(html) {
       <body>
         <h1></h1>
         {html.children}
-        <footer class="footer">
+        <footer className="footer">
           <h4>Site created by Philip Bowman</h4>
           <p>
             {" "}
