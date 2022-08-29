@@ -2,6 +2,12 @@ main {
   text-align: center;
 }
 
+#New-Form {
+  text-align: left;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
 h1 {
   text-align: center;
   color: cornflowerblue;
