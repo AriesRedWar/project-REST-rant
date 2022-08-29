@@ -11,7 +11,7 @@ function error404() {
           <a href="/">
             <button className="btn-primary">Home Page</button>
           </a>
-            <img src="/images/Aries.jpg" alt="aries God of Ware on fire" />
+          <img src="/images/Aries.jpg" alt="aries God of Ware on fire" />
         </div>
       </main>
     </Def>
