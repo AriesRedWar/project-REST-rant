@@ -7,10 +7,7 @@ function error404() {
       <main>
         <div>
           <h1>404: PAGE NOT FOUND</h1>
-          <p>Oops, sorry, we can't find this page!</p>
-          <a href="/">
-            <button className="btn-primary">Home Page</button>
-          </a>
+          <h3>Oops, sorry, we can't find this page!</h3>
           <img src="/images/Aries.jpg" alt="aries God of Ware on fire" />
         </div>
       </main>

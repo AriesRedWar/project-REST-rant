@@ -1,11 +1,47 @@
 main {
   text-align: center;
 }
+nav {
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: rgb(8, 8, 8);
+  text-decoration: none;
+}
 
 #New-Form {
   text-align: left;
   margin-left: 3%;
   margin-right: 3%;
+}
+
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
 }
 
 h1 {
@@ -21,7 +57,10 @@ img {
 
 footer {
   text-align: center;
-  background-color: rgb(206, 238, 227);
+  background-color: cornflowerblue;
   padding: 20px;
   border-top: 5px solid white;
+}
+footer a {
+  color: white;
 }
