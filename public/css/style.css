@@ -58,13 +58,14 @@ main {
   object-fit: cover;
 }
 
-#Rate, p {
+#Rate,
+p {
   padding: 0.1em;
 }
-#Desc, p {
+#Desc,
+p {
   padding: 0.1em;
 }
-
 
 h1 {
   text-align: center;
@@ -74,8 +75,7 @@ h1 {
 h3 {
   color: red;
   text-shadow: 2px 2px 2px rgb(3, 3, 8);
-  }
-
+}
 
 h4 p {
   font-size: 15px;
@@ -87,8 +87,6 @@ img {
   display: block;
   margin: auto;
 }
-
-
 
 footer {
   text-align: center;
