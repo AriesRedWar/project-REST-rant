@@ -8,7 +8,8 @@ function edit_form(data) {
       <main id="New-Form">
         <h1>Edit {data.place.name}</h1>
         <form method="POST" action={`/places/${data.place.id}?_method=PUT`} >
-          <div className="form-group">
+        <div className="row">
+        <div className="col-sm-6 col-md-4 col-lg-3">
             <label htmlFor="name">Place Name</label>
             <input
               className="form-control"
@@ -18,7 +19,7 @@ function edit_form(data) {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="col-sm-6 col-md-4 col-lg-3">
             <label htmlFor="pic">Place Picture</label>
             <input
               /*type="url"*/
@@ -28,7 +29,7 @@ function edit_form(data) {
               defaultValue={data.place.pic}
             />
           </div>
-          <div className="form-group">
+          <div className="col-sm-6 col-md-4 col-lg-3">
             <label htmlFor="city">City</label>
             <input
               className="form-control"
@@ -37,7 +38,7 @@ function edit_form(data) {
               defaultValue={data.place.city}
             />
           </div>
-          <div className="form-group">
+          <div className="col-sm-6 col-md-4 col-lg-3">
             <label htmlFor="state">State</label>
             <select
               className="form-control"
@@ -96,7 +97,7 @@ function edit_form(data) {
               <option value="WY">Wyoming</option>
             </select>
           </div>
-          <div className="form-group">
+          <div className="col-sm-6 col-md-4 col-lg-3">
             <label htmlFor="cuisines">Cuisines</label>
             <input
               className="form-control"
@@ -105,7 +106,8 @@ function edit_form(data) {
               defaultValue={data.place.cuisines}
               required
             />
-          </div>
+          </div></div>
+          <p></p>
           <input
             className="btn btn-primary"
             type="submit"
