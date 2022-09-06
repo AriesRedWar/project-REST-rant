@@ -9,10 +9,14 @@ function show(data) {
     let sumRatings = data.place.comments.reduce((tot, c) => {
       return tot + c.stars
     }, 0)
-    let averageRating = sumRatings / data.place.comments.length
+    let averageRating = Math.round(sumRatings / data.place.comments.length)
+    let stars = ''
+    for (let i = 0; i < averageRating; i++) {
+      stars += '⭐'
+    }
     rating = (
       <h4>
-        {Math.round(averageRating)} stars
+        {stars} stars
       </h4>
     )
     comments = data.place.comments.map((c) => {
@@ -24,6 +28,9 @@ function show(data) {
             <stong>- {c.author}</stong>
           </h4>
           <h4>Rating: {c.stars}</h4>
+          <form method="POST" action={`/places/${data.place.id}/comments/${c.id}?_method=DELETE`}>
+          <input type="submit" className="btn btn-danger" value="Delete Comment" />
+        </form>
         </div>
       );
     });
@@ -70,7 +77,9 @@ function show(data) {
           </div>
           <div>
             <h3> Comments</h3>
+            <div  className="border col-sm-6">
             {comments}
+</div>
           </div>
           <div>
             <h1>Got Your Own Rant or Rave?</h1>

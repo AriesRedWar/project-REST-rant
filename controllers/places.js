@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const db = require("../models");
 
+//Index
 router.get("/", (req, res) => {
   db.Place.find()
     .then((places) => {
@@ -12,6 +13,12 @@ router.get("/", (req, res) => {
     });
 });
 
+// add new place page
+router.get("/new", (req, res) => {
+  res.render("places/new");
+});
+
+// add place New Submit
 router.post("/", (req, res) => {
   db.Place.create(req.body)
     .then(() => {
@@ -34,10 +41,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get("/new", (req, res) => {
-  res.render("places/new");
-});
-
+// show place page
 router.get("/:id", (req, res) => {
   db.Place.findById(req.params.id)
   .populate('comments')
@@ -51,10 +55,19 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
-  res.send("PUT /places/:id stub");
-});
+// Edit a place
+router.put('/:id', (req, res) => {
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
+  .then(() => {
+      res.redirect(`/places/${req.params.id}`)
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
+})
 
+// delete a place
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
   .then(place => {
@@ -66,11 +79,18 @@ router.delete('/:id', (req, res) => {
   })
 })
 
+// Edit form
+router.get('/:id/edit', (req, res) => {
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
+})
 
-router.get("/:id/edit", (req, res) => {
-  res.send("GET edit form stub");
-});
-
+// post a comment submition
 router.post('/:id/comments', (req, res) => {
   // console.log(req.body)
   req.body.rant = req.body.rant ? true : false
@@ -96,8 +116,15 @@ router.post('/:id/comments', (req, res) => {
 })
 
 
-router.delete("/:id/rant/:commentId", (req, res) => {
-  res.send("GET /places/:id/comment/:commentId stub");
-});
+// router.delete("/:id/comments/:commentId", (req, res) => {
+//   db.places.comments.findByIdAndDelete(req.params.id)
+//   .then(place => {
+//       res.redirect('/places')
+//   })
+//   .catch(err => {
+//       console.log('err', err)
+//       res.render('error404')
+//   })
+// })
 
 module.exports = router;
