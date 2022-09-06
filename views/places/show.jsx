@@ -2,8 +2,19 @@ const React = require("react");
 const Def = require("../default");
 
 function show(data) {
-  let comments = <h4 className="inactive">No Comments yet!</h4>;
+  let comments = (<h4 className="inactive">No Comments yet!</h4>)
+  let rating = (
+    <h3 className="inactive"></h3>)
   if (data.place.comments.length) {
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+      return tot + c.stars
+    }, 0)
+    let averageRating = sumRatings / data.place.comments.length
+    rating = (
+      <h4>
+        {Math.round(averageRating)} stars
+      </h4>
+    )
     comments = data.place.comments.map((c) => {
       return (
         <div className="border">
@@ -31,13 +42,12 @@ function show(data) {
             <div className="col-sm-6">
               <h1>{data.place.name}</h1>
               <h3 id="Rate">Rating</h3>
-              <h4>Not Rated</h4>
+              <h4>{rating}</h4>
               <h3 id="Desc">Description</h3>
               <h4>{data.place.showEstablished()}</h4>
               <h5>Serving {data.place.cuisines}</h5>
               <div id="ah">
                 <form id="btn" method="POST">
-                  {" "}
                   <a
                     type="click"
                     href={`/places/${data.place.id}/edit`}
@@ -64,10 +74,7 @@ function show(data) {
           </div>
           <div>
             <h1>Got Your Own Rant or Rave?</h1>
-            <form
-              action={`/places/${data.place.id}/comments`}
-              method="POST"
-            >
+            <form action={`/places/${data.place.id}/comments`} method="POST">
               <div className="row">
                 <div className="form-group col-sm-12">
                   <label htmlFor="content">Content</label>
@@ -101,7 +108,7 @@ function show(data) {
                     type="checkbox"
                     id="rant"
                     name="rant"
-                    className="form-control"
+                    className="checkbox"
                   />
                 </div>
               </div>
