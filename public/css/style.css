@@ -97,3 +97,15 @@ footer {
 footer a {
   color: white;
 }
+#btn {
+padding: 0.5em;
+}
+#ah{
+  display: inline-flex;
+}
+
+
+input[type='checkbox'],
+label {
+    width: auto;
+}
