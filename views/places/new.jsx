@@ -10,7 +10,6 @@ function new_form(data) {
     <Def>
       <main id="New-Form">
         <h1>Add a New Place</h1>
-        {message}
         <form method="POST" action="/places">
           <div className="row">
             <div className="col-sm-6 col-md-4 col-lg-3">
